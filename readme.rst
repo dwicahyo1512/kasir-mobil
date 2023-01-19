@@ -2,9 +2,8 @@
 kasir admin
 ###################
 
-.. image:: dokumentasi.mobil1.png
+.. image:: https://github.com/thebjorn/pydeps/blob/master/docs/_static/pydeps-pylib.svg
   :width: 400
-  :alt: Alternative text
 
 
 
