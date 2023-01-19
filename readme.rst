@@ -2,9 +2,9 @@
 kasir admin
 ###################
 
-preview
-![mobil1.png]( {dokumnetasi} )
-
+.. image:: dokumentasi.mobil1.png
+  :width: 400
+  :alt: Alternative text
 
 
 
