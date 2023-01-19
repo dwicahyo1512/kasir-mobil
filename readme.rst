@@ -1,4 +1,14 @@
 ###################
+kasir admin
+###################
+
+preview
+![mobil1.png]( {dokumnetasi} )
+
+
+
+
+###################
 What is CodeIgniter
 ###################
 
