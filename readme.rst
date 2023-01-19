@@ -1,9 +1,25 @@
 ###################
 kasir admin
 ###################
-
-.. image:: https://github.com/thebjorn/pydeps/blob/master/docs/_static/pydeps-pylib.svg
+preview
+.. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%201.png
   :width: 400
+
+.. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%202.png
+  :width: 400
+
+.. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%203.png
+  :width: 400
+
+.. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%204.png
+  :width: 400
+
+.. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%205.png
+  :width: 400
+
+.. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%206.png
+  :width: 400
+
 
 
 
