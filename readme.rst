@@ -1,7 +1,8 @@
 ###################
 kasir admin
 ###################
-preview
+
+
 .. image:: https://github.com/dwicahyo1512/mobil/blob/master/dokumentasi/mobil%201.png
   :width: 400
 
