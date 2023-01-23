@@ -30,7 +30,7 @@
                 <p>items</p>
               </div>
               <div class="icon">
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fa fa-car"></i>
               </div>
               <a href="<?= site_url('item') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -60,7 +60,7 @@
                 <p>User</p>
               </div>
               <div class="icon">
-                <i class="fas fa-users"></i>
+                <i class="fa fa-address-card"></i>
               </div>
               <a href="<?= site_url('user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -74,7 +74,7 @@
                 <p>customer</p>
               </div>
               <div class="icon">
-                <i class="fas fa-money-bill"></i>
+              <i class="fa fa-user-plus"></i>
               </div>
               <a href="<?= site_url('customer') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

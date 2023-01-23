@@ -49,8 +49,6 @@ class Stock extends CI_Controller
                     'cluster' => 'ap1',
                     'useTLS' => true
                 );
-
-                $data['message'] = 'hello world';
              
                 $this->session->set_flashdata('pesan', 'Data Stock-In berhasil ditambah');
                 redirect('stock/in');

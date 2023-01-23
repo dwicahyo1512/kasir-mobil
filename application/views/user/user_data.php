@@ -21,7 +21,7 @@
     <div class="box">
         <div class="box_header">
             <h3 class="box-title">
-                Data User
+            
             </h3>
             <div class="float-right">
                 <a href="<?= site_url('user/add') ?>" class="btn btn-primary btn-flat">

@@ -52,7 +52,9 @@ class Sale_m extends CI_Model
 
     public function add_sale_detail($data)
     {
-        $this->db->insert_batch('t_sale_detail', $data);
+    if(!empty($data)){
+    $this->db->insert_batch('t_sale_detail', $data);
+    }
     }
 
     public function get($id = null)
@@ -91,13 +93,17 @@ class Sale_m extends CI_Model
         $this->db->insert('t_cart', $params);
     }
 
+    
     public function update_cart($post)
     {
+        $total_awal = ($post['item_price'] * $post['item_qty']);
+        $total = ($total_awal - (($total_awal * $post['item_discount']) / 100));
+
         $data = [
             'price' => $post['item_price'],
             'discount_item' => $post['item_discount'],
             'qty' => $post['item_qty'],
-            'total' => (($post['item_price'] * $post['item_qty']) - $post['item_discount']),
+            'total' => $total,
             'user_id' => $this->session->userdata('userid')
         ];
 

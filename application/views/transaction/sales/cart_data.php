@@ -118,10 +118,16 @@ if ($cart->num_rows() > 0) {
         })
     }
 
+    
+
     function simpandata() {
+    if ($('#item_discount').val() > 100) {
+        alert("discount tidak boleh lebih dari 100%");
+    } else {
         $('#formku').attr("action", "<?= site_url('sales/update') ?>");
         $('#formku').submit();
         calculate()
         loadItem()
     }
+}
 </script>

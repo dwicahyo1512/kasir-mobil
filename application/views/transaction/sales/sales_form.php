@@ -167,7 +167,7 @@
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="number" id="discount" value="0" class="form-control">
+                                        <input type="number" id="discount" value="0" class="form-control" maxlength="100">
                                     </div>
                                 </td>
                             </tr>
@@ -267,7 +267,7 @@
                             </tr>
                         </thead>
                         <tbody id="tblItem">
-                           <!--  <?php foreach ($item as $i) { ?>
+                            <!--  <?php foreach ($item as $i) { ?>
                                 <tr>
                                     <td><?= $i->barcode; ?></td>
                                     <td><?= $i->name; ?></td>
@@ -294,6 +294,15 @@
         loadItem()
     });
 
+    //     $(document).ready(function() {
+    //   $("#discount").on("input", function() {
+    //     if ($(this).val().length > 100) {
+    //       $(this).val($(this).val().slice(0, 100));
+    //       $(".inv-discount").html("Maksimum 100 karakter");
+    //     }
+    //   });
+    // });
+
     $(document).on('click', '#select', function() {
         $('#item_id').val($(this).data('id'))
         $('#barcode').val($(this).data('barcode'))
@@ -302,9 +311,8 @@
         $('#modal-item').modal('hide')
     });
 
-    function cek_qty(val)
-    {
-        if(val > $('#stock').val()){
+    function cek_qty(val) {
+        if (val > $('#stock').val()) {
             alert('Stock tidak mencukupi');
             $('#item_id').val('');
             $('#barcode').val('');
@@ -456,10 +464,9 @@
         }
     });
 
-    function loadItem()
-    {
-         $.ajax({
-            url: "<?= site_url('item/get_data')?>",
+    function loadItem() {
+        $.ajax({
+            url: "<?= site_url('item/get_data') ?>",
             type: "GET",
             dataType: "json",
             success: function(result) {
@@ -478,7 +485,16 @@
         isNaN(subtotal) ? $('#sub_total').val(0) : $('#sub_total').val(subtotal)
 
         var discount = $('#discount').val()
-        var grand_total = subtotal - discount
+        if (discount > 100) {
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Discount tidak boleh lebih dari 100%',
+            })
+            $('#discount').val(100);
+            return;
+        }
+        var grand_total = subtotal - (discount / 100) * subtotal
         //console.log(subtotal);
         if (isNaN(grand_total)) {
             $('#grand_total').val(0)
@@ -492,6 +508,7 @@
         var cash = $('#cash').val();
         cash != 0 ? $('#change').val(cash - grand_total) : $('#change').val(0);
     }
+
 
     $(document).on('keyup mouseup', '#discount, #cash', function() {
         calculate()
