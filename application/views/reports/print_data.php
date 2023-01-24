@@ -44,7 +44,7 @@
 	            <td>'.$report['item_name'].'</td>
 	            <td>'.indo_currency($report['price']).'</td>
 	            <td>'.$report['qty'].'</td>
-	            <td>'.indo_currency($report['discount']).'</td>
+	            <td>'.indo_persen($report['discount']).'</td>
 	            <td>'.$report['note'].'</td>
 	            <td>'.indo_date($report['date']).'</td>
 	        </tr>

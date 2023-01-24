@@ -480,7 +480,7 @@
     function calculate() {
         var subtotal = 0;
         $('#cart_tabel tr').each(function() {
-            subtotal += parseInt($(this).find('#total').text(), 10)
+            subtotal = parseInt($(this).find('#total').text(), 10)
         })
         isNaN(subtotal) ? $('#sub_total').val(0) : $('#sub_total').val(subtotal)
 

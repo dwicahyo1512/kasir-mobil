@@ -28,8 +28,15 @@ class Reports extends CI_Controller
     public function print_report($sale_id)
     {
         $data['report'] = $this->sale_m->get_sale_detail($sale_id)->row_array();
-        $html = $this->load->view('reports/print_data', $data, true);
-        $this->fungsi->PdfGenerator($html, 'Laporan-' . $data['report']->invoice, 'A4', 'landscape');
+        $this->load->library('dompdf_gen');
+        $this->load->view('reports/print_data', $data, true);
+        $paper_size ='A4';
+        $orientation ='potrait';
+        $html = $this->output->get_output();
+        $this->dompdf->set_paper($paper_size,$orientation);
+        $this->dompdf->load_html($html);
+        $this->dompdf->render();
+        $this->dompdf->stream('print_data.pdf',array('Attachment'=>0));
     }
 
     public function report_sale()

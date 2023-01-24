@@ -8,7 +8,7 @@ if ($cart->num_rows() > 0) {
             <td><?= indo_currency($c->cart_price); ?></td>
             <td><?= $c->qty; ?></td>
             <td><?php if ($c->discount_item != 0) {
-                    $uang = indo_currency($c->discount_item);
+                    $uang = indo_persen($c->discount_item);
                 } else {
                     $uang = $c->discount_item;
                 } ?>
@@ -73,7 +73,7 @@ if ($cart->num_rows() > 0) {
 
                     <div class="form-row">
                         <label for="item_discount">Discount Item</label>
-                        <input type="text" id="item_discount" name="item_discount" class="form-control">
+                        <input type="text" id="item_discount" name="item_discount" class="form-control"  required>
                         <div class="invalid-feedback inv-discount">
                             &nbsp;
                         </div>

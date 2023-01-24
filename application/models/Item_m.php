@@ -17,6 +17,7 @@ class Item_m extends CI_Model
         $query = $this->db->get();
         return $query;
     }
+    
 
     public function save($post)
     {

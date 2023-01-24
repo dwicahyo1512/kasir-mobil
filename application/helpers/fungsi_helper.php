@@ -31,6 +31,10 @@ function indo_currency($value)
 {
     return 'Rp. ' . number_format($value, 0, ",", ".");
 }
+function indo_persen($value)
+{
+    return number_format($value, 0, ",", ".") . '%';
+}
 
 function indo_date($date){
     $d = substr($date,8,2);

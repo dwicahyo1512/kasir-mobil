@@ -34,4 +34,6 @@ Class Fungsi {
         $this->ci->load->model('user_m');
         return $this->ci->user_m->get()->num_rows();
     }
+
+    
 }

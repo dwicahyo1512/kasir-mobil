@@ -34,6 +34,9 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/sweetalert2/animate.min.js">
+     <!-- Select2 -->
+     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <style>
         .swal2-popup {
             /* font-size: 1.6rem !important; */
@@ -242,7 +245,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= site_url('stock/in') ?>"  class="nav-link ">
+                                    <a href="<?= site_url('stock/in') ?>" class="nav-link ">
                                         <i class=" far fa-circle nav-icon"></i>
                                         <p>stock in</p>
                                     </a>
@@ -257,29 +260,29 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview <?= $this->uri->segment(2) == 'sale_report' || $this->uri->segment(2) == 'stock_report' || $this->uri->segment(2) == 'report_sale' ? 'menu-open' : '' ?>">
-                        <a href="#" class="nav-link <?= $this->uri->segment(2) == 'sale_report' || $this->uri->segment(2) == 'stock_report' || $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
-                            <i class="nav-icon fas fa-chart-pie"></i>
-                            <p>
-                                Reports
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= site_url('reports/sale_report'); ?>" class="nav-link <?= $this->uri->segment(2) == 'sale_report' ? 'active' : '' ?>">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sales</p>
-                                </a>
-                            </li>
-                           
-                            <li class="nav-item">
-                                <a href="<?= site_url('reports/report_sale') ?>" class="nav-link <?= $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Laporan</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                            <a href="#" class="nav-link <?= $this->uri->segment(2) == 'sale_report' || $this->uri->segment(2) == 'stock_report' || $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Reports
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= site_url('reports/sale_report'); ?>" class="nav-link <?= $this->uri->segment(2) == 'sale_report' ? 'active' : '' ?>">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Sales</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="<?= site_url('reports/report_sale') ?>" class="nav-link <?= $this->uri->segment(2) == 'report_sale' ? 'active' : '' ?>">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Laporan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <!-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
@@ -352,6 +355,10 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+
+    <!-- Select2 -->
+
 
     <!-- SweetAlert2 -->
     <script src="<?= base_url() ?>assets/plugins/sweetalert2/sweetalert2.min.js"></script>

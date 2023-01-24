@@ -59,10 +59,10 @@
                                             <label for="category" class="col-form-label">Category <font color="#f00">*</font></label>
                                         </div>
                                         <div class="col-md-8 col-xs-8">
-                                            <select name="category" id="category" class="form-control" style="margin-bottom: 5px;">
-                                                <option value="" selected>--Pilih--</option>
+                                            <select name="category" id="category" class="form-control select2" style="margin-bottom: 5px;">
                                                 <?php foreach ($category as $c) { ?>
-                                                    <option value="<?= $c->category_id; ?>"><?= $c->name; ?></option>
+                                                    <option value="<?= $c->category_id;?>"  <?= $c->category_id == $category ? "selected" : null ?> ><?= $c->name; ?></option>
+
                                                 <?php } ?>
                                             </select>
                                             <div class="invalid-feedback inv-category">
@@ -76,7 +76,6 @@
                                         </div>
                                         <div class="col-md-8 col-xs-8">
                                             <select name="unit" id="unit" class="form-control" style="margin-bottom: 5px;">
-                                                <option value="" selected>--Pilih--</option>
                                                 <?php foreach ($unit as $u) { ?>
                                                     <option value="<?= $u->unit_id ?>"><?= $u->name ?></option>
                                                 <?php } ?>
@@ -215,6 +214,17 @@
         </div>
     </div>
 </section>
+<script src="<?= base_url() ?>assets/plugins/select2/js/select2.full.min.js"></script>
+<script>
+    $('#category').select2({
+        dropdownParent: $('#myModal'),
+        theme: 'bootstrap4',
+    });
+    $('#unit').select2({
+        dropdownParent: $('#myModal'),
+        theme: 'bootstrap4'
+    });
+</script>
 <script>
     var dsState;
 

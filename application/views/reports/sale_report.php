@@ -34,6 +34,7 @@
                             <th>Invoice</th>
                             <th>Name Customer</th>
                             <th>Discount</th>
+                            <th>price</th>
                             <th>Note</th>
                             <th>Date</th>
                             <th>Petugas</th>
@@ -47,7 +48,8 @@
                                 <td><?= $no++; ?></td>
                                 <td id="invoice"><?= $s->invoice; ?></td>
                                 <td style="text-align: center;"><?= $s->customer_name != null ? $s->customer_name : "Umum"; ?></td>
-                                <td><?= indo_currency($s->discount) ?></td>
+                                <td><?= indo_persen($s->discount) ?></td>
+                                <td><?= indo_currency($s->total_price) ?></td>
                                 <td><?= $s->note; ?></td>
                                 <td style="text-align: center;"><?= indo_date($s->date) ?></td>
                                 <td align="center">
@@ -57,7 +59,7 @@
                                     <a class="btn btn-default btn-sm" onclick="showDetail(<?= $s->sale_id; ?>)"><i class=" fa fa-eye"></i>
                                     </a>
                                     <!-- <a href="javascript:;" onclick="printSale(<?= $s->sale_id; ?>)" style="text-decoration: none;" class="btn btn-danger btn-sm"><i class="fa fa-print"></i></a> -->
-                                    <a href="<?= site_url('reports/print_report/' . $s->sale_id); ?>" target="_blank" class="btn btn-danger btn-sm"><i class="fa fa-print"></i></a>
+                                    <!-- <a href="<?= site_url('reports/print_report/' . $s->sale_id); ?>" target="_blank" class="btn btn-danger btn-sm"><i class="fa fa-print"></i></a> -->
                                 </td>
                             </tr>
                         <?php } ?>
